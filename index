@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,500,900&display=swap">
+    <style>
+        /* Styling for the footer notification bar */
+        .footer-notification {
+            position: fixed;
+            bottom: 0;
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%);
+            width: 80%;
+            background-color: black;
+            padding: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @media (max-width: 1000px) {
+            .footer-notification {
+                width: 60%;
+            }
+        }
+
+        /* Styling for the text using Roboto Black (900) */
+        .footer-text {
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900; /* Roboto Black (900) */
+            text-transform: uppercase;
+            font-size: 20px;
+            text-align: center;
+            flex-grow: 1;
+            margin-right: 15%;
+        }
+
+        @media (max-width: 1000px) {
+            .footer-text {
+                margin-right: 0;
+            }
+        }
+
+        /* Styling for the button container */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-top: -33px;
+        }
+
+        @media (max-width: 1000px) {
+            .button-container {
+                align-items: center; /* Center the button vertically */
+                margin-top: 20px; /* Add space between text and button */
+            }
+        }
+
+        /* Styling for the button */
+        .footer-button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 9px 10px 20px;
+            border-radius: 25px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500; /* Roboto Regular (500) */
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* Styling for the arrow icon */
+        .arrow-icon {
+            margin-left: 5px;
+        }
+
+        /* Styling for the close icon */
+        .close-icon {
+            cursor: pointer;
+            fill: white; /* Set the fill color to white */
+            width: 24px; /* Set the width and height of the SVG icon */
+            height: 24px;
+            right: 10px; /* Position in the top right corner */
+            position: absolute;
+            top: 10px;
+        }
+
+        /* Styling for the custom arrow icon */
+        .custom-arrow-icon {
+            fill: black; /* Set the fill color to black */
+            width: 24px; /* Set the width and height of the SVG icon */
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="notification" class="footer-notification" style="display: none;">
+        <span class="close-icon" onclick="closeNotification()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+        </span>
+        <div class="footer-text">THE ONLY WAY TO DO GREAT WORK IS TO LOVE THE WORK YOU DO!</div>
+        <div class="button-container">
+            <button class="footer-button">
+                Read more
+                <span class="custom-arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -960 960 960"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Function to show the notification after 2 seconds
+        setTimeout(function() {
+            document.getElementById('notification').style.display = 'block';
+        }, 2000);
+
+        // Function to close the notification
+        function closeNotification() {
+            document.getElementById('notification').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
